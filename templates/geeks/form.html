@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+    CRUD: Create
+{% endblock %}
+{% block content %}
+    <div class='container mt-2'>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ form }}
+            <button class='btn btn-primary mt-2' type="submit">Guardar</button>
+            <a class='btn btn-danger mt-2' href='{% url "geeks:create" %}'>Cancelar</a>
+        </form>
+    </div>
+{% endblock %}

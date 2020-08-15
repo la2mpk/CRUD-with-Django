@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+    CRUD: Details
+{% endblock %}
+{% block content %}
+    <div class='container'>
+        {{ geek.title }} <br/>
+        {{ geek.description }} <br/>
+        {{ geek.slug }} <br/>
+    </div>
+{% endblock %}

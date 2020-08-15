@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+    CRUD: Details
+{% endblock %}
+{% block content %}
+    <div class='container'>
+        <ul class="list-group mt-2">
+            {% if not geeks %}
+                <p>No hay datos <a class='font-weight-bold' href="{% url 'geeks:create'%}">¡crea uno!</a></p>
+            {% else %}
+                {% for geek in geeks %}
+                    <li class="list-group-item">
+                        {{ geek }} 
+                        <a href="{% url 'geeks:update' geek.id %}">Update</a>
+                        <a href="{% url 'geeks:delete' geek.id %}">Delete</a>
+                    </li>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
